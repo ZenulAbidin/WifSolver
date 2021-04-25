@@ -74,8 +74,8 @@ class WorkerEnd extends Worker {
                         while (!found && !arrFinished(arr, arrLimit)) {
                             if (reporter) {
 				String line = String.join("\n", lastTested);
-                                System.out.println("PING! " + (new Date()));
-				System.out.println(line);
+                                //System.out.println("PING! " + (new Date()));
+				//System.out.println(line);
                                 start = System.currentTimeMillis();
                             }
                             stringBuilderThread.setLength(0);
