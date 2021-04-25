@@ -72,7 +72,7 @@ class WorkerEnd extends Worker {
                         StringBuilder stringBuilderThread = new StringBuilder(expectedLength);
                         long start = System.currentTimeMillis();
                         while (!found && !arrFinished(arr, arrLimit)) {
-                            if (reporter && (System.currentTimeMillis() - start > Configuration.getStatusPeriod())) {
+                            if (reporter) {
                                 System.out.println("PING! " + (new Date()) + " " + Arrays.toString(lastTested));
                                 start = System.currentTimeMillis();
                             }
@@ -139,6 +139,6 @@ class WorkerEnd extends Worker {
         if (procs < 1) {
             procs = THREADS_MIN;
         }
-        THREADS = Math.min(procs, 29);
+        THREADS = Math.min(procs, 256);
     }
 }
